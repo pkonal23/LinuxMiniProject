@@ -1,10 +1,20 @@
+#!/bin/bash
 
-# Fetch and extract the secret generator tarball
-wget https://exit-zero-academy.github.io/DevOpsTheHardWayAssets/linux_project/secretGenerator.tar.gz
-tar -xvf secretGenerator.tar.gz
+# practice dir creation
+if [ ! -d "secretDir" ]; then
+  echo "Failed to generate secret. The directory 'secretDir' must exist before."
+  exit 1
+fi
 
-# Navigate to the directory where the secret generator is located
-cd secretGenerator
+# practice dir deletion and file move
+if [ -d "maliciousFiles" ]; then
+  echo "Failed to generate secret. The directory 'maliciousFiles' contains some>
+  exit 1
+fi
 
-# Run the secret generator script
-/home/Desktop/src generateSecret.sh
+# practice file creation
+if [ ! -f "secretDir/.secret" ]; then
+  echo "Failed to generate secret. The directory 'secretDir' must contain a fil>
+  exit 1
+fi
+
